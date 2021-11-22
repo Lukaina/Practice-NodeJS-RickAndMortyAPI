@@ -1,0 +1,20 @@
+{
+  "name": "ejerciciocs",
+  "version": "1.0.0",
+  "description": "Práctica cliente-servidor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "practica",
+    "modelo",
+    "cliente",
+    "servidor"
+  ],
+  "author": "Vero Alcaraz",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.24.0"
+  }
+}
