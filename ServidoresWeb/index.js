@@ -15,6 +15,17 @@ app.get('/', (req, res) => { //La ruta y el controlador de dicha ruta
     })
 })
 
+app.get('/:id', (req, res) => { 
+    // let id = req.params.id; //Parámetros de ruta que vienen en el req, que nos envía nuestro cliente
+    // console.log(id);
+    let { params: { id } } = req;
+    let user = Service.getUser(id); //Definir esta función de getUser en nuestro servicio
+    res.json({
+        message: `Usuari@ ${id}`,
+        body: user, 
+    })
+})
+
 //Agregar nuevo Endpoint:
 app.post('/', (req, res) => {
     let { body: newUser } = req; //Destructuring
@@ -22,6 +33,15 @@ app.post('/', (req, res) => {
     res.status(201).json({ //Responderle al cliente que los datos han sido agregados
         message: 'Usuari@ cread@',
         body: Service.createUser(newUser)
+    })
+})
+
+app.put('/:id', (req, res) => {
+    let {params: { id }} = req;
+    let modifyUser = req.body;
+    res.json({
+        message: `Usuari@ modificad@ con id: ${id}`,
+        body: Service.modify(modifyUser, id)
     })
 })
 
