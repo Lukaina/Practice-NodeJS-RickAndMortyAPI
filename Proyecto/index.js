@@ -8,7 +8,7 @@ const app = express();
 
 app.use(express.json()); //Dando la capacidad al servidor de recibir datos en el cuerpo de la petición
 
-productsAPI(app);
+productsAPI(app); //Modulo
 
 app.listen(Config.port, () => {
     debug(`Servidor escuchando en el puerto ${Config.port}`);

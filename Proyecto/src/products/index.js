@@ -1,13 +1,15 @@
 const express = require('express');
 
+const { ProductsController } = require('./controller');
+
 const router = express.Router(); //Manejo de rutas del módulo
 
-module.exports.ProductsAPI = (app) => {
+module.exports.productsAPI = (app) => {
     //Rutas
     router
-        .get('/', (req, res) => {}) //http://localhost:3000/api/products/
-        .get('/:id', (req, res) => {}) //http://localhost:3000/api/products/23
-        .post('/', (req, res) => {}) 
+        .get('/', ProductsController.getProducts) //http://localhost:3000/api/products/
+        .get('/:id', ProductsController.getProduct) //http://localhost:3000/api/products/23
+        .post('/', ProductsController.createProduct) 
 
     app.use('/api/products', router) //Dentro de esta url configura el router
 }
