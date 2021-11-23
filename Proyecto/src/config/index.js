@@ -4,4 +4,6 @@ require('dotenv').config(); //Nos ayuda a traer todas esas variables que están 
 module.exports.Config = { //Exportar el archivo e importar en cualquier otro. 
     //Variables de entorno
     port: process.env.PORT,
+    mongoUri: process.env.MONGO_URI,
+    mongoDbname: process.env.MONGO_DBNAME,
 }
