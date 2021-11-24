@@ -16,12 +16,12 @@ const getById = async (id) => {
 
 const create = async (product) => {
     const collection = await Database(COLLECTION);
-    let result = collection.insertOne(product);
-    return result.insertedId
+    let result = await collection.insertOne(product);
+    return result.insertedId;
 }
 
 module.exports.ProductsService = {
     getAll,
     getById,
-    create
-}
+    create,
+};
